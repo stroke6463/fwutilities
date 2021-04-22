@@ -47,6 +47,7 @@ namespace FileWatcherUtilities.FileWatcherSimple
         /// </summary>
         /// <param name="sender">Source of the event.</param>
         /// <param name="e">Event data.</param>
+        /// 
         private void FormMainLoad(object sender, 
                                   EventArgs e)
         {
@@ -59,7 +60,13 @@ namespace FileWatcherUtilities.FileWatcherSimple
             
             // Set double buffering for the form.
             SetDoubleBuffering();
+
+            this.Visible = false;
+            this.ShowInTaskbar = false;
+
         }
+
+        
 
         /// <summary>
         /// Set double buffering for the form. 
@@ -902,5 +909,33 @@ namespace FileWatcherUtilities.FileWatcherSimple
         }
 
         #endregion
+
+        private void NotifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            //this.Visible = true;
+            //this.ShowInTaskbar = true;
+
+        }
+
+        private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void ExitToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void ShowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+        }
+
+        private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

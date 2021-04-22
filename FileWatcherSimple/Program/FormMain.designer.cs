@@ -28,17 +28,18 @@ namespace FileWatcherUtilities.FileWatcherSimple
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.tabFileWatchers = new System.Windows.Forms.TabControl();
             this.tabPageFileWatchers = new System.Windows.Forms.TabPage();
             this.listViewFileWatchers = new System.Windows.Forms.ListView();
-            this.columnHeaderDaemon = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderStatus = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderEvents = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderLastEvent = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderLastEventTime = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderErrors = new System.Windows.Forms.ColumnHeader();
-            this.columnHeaderEnabled = new System.Windows.Forms.ColumnHeader();
+            this.columnHeaderDaemon = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderStatus = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderEvents = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLastEvent = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderLastEventTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderErrors = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderEnabled = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tabPageLogMessages = new System.Windows.Forms.TabPage();
             this.textBoxLogMessages = new System.Windows.Forms.TextBox();
             this.panelTabs = new System.Windows.Forms.Panel();
@@ -79,6 +80,10 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.toolStripStatusLabelAutoStartupValue = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelProcessesToRun = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabelProcessesToRunCount = new System.Windows.Forms.ToolStripStatusLabel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.showToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tabFileWatchers.SuspendLayout();
             this.tabPageFileWatchers.SuspendLayout();
             this.tabPageLogMessages.SuspendLayout();
@@ -86,13 +91,14 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.toolStripFileWatchers.SuspendLayout();
             this.menuStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabFileWatchers
             // 
-            this.tabFileWatchers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabFileWatchers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabFileWatchers.Controls.Add(this.tabPageFileWatchers);
             this.tabFileWatchers.Controls.Add(this.tabPageLogMessages);
             this.tabFileWatchers.Location = new System.Drawing.Point(0, 0);
@@ -197,9 +203,9 @@ namespace FileWatcherUtilities.FileWatcherSimple
             // 
             // panelTabs
             // 
-            this.panelTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelTabs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTabs.Controls.Add(this.tabFileWatchers);
             this.panelTabs.Location = new System.Drawing.Point(0, 52);
             this.panelTabs.Name = "panelTabs";
@@ -306,6 +312,7 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.menuStrip.Size = new System.Drawing.Size(632, 24);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "menuStrip";
+            this.menuStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.MenuStrip_ItemClicked);
             // 
             // fileToolStripMenuItem
             // 
@@ -415,7 +422,7 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.toolsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.optionsToolStripMenuItem});
             this.toolsToolStripMenuItem.Name = "toolsToolStripMenuItem";
-            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.toolsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.toolsToolStripMenuItem.Text = "&Tools";
             // 
             // optionsToolStripMenuItem
@@ -439,26 +446,26 @@ namespace FileWatcherUtilities.FileWatcherSimple
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(122, 22);
             this.helpToolStripMenuItem1.Text = "&Help...";
             this.helpToolStripMenuItem1.Click += new System.EventHandler(this.HelpToolStripMenuItem1Click);
             // 
             // lisenceToolStripMenuItem
             // 
             this.lisenceToolStripMenuItem.Name = "lisenceToolStripMenuItem";
-            this.lisenceToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.lisenceToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.lisenceToolStripMenuItem.Text = "&License...";
             this.lisenceToolStripMenuItem.Click += new System.EventHandler(this.LisenceToolStripMenuItemClick);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(119, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItemClick);
             // 
@@ -525,6 +532,37 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.toolStripStatusLabelProcessesToRunCount.Text = "0";
             this.toolStripStatusLabelProcessesToRunCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "File Watcher Simple";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.NotifyIcon1_MouseDoubleClick_1);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.showToolStripMenuItem,
+            this.exitToolStripMenuItem1});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
+            // 
+            // showToolStripMenuItem
+            // 
+            this.showToolStripMenuItem.Name = "showToolStripMenuItem";
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showToolStripMenuItem.Text = "Show";
+            this.showToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem1
+            // 
+            this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Text = "Exit";
+            this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -534,12 +572,13 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.Controls.Add(this.toolStripFileWatchers);
             this.Controls.Add(this.menuStrip);
             this.Controls.Add(this.panelTabs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "File Watcher Simple";
-            this.Load += new System.EventHandler(this.FormMainLoad);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainFormClosing);
+            this.Load += new System.EventHandler(this.FormMainLoad);
             this.tabFileWatchers.ResumeLayout(false);
             this.tabPageFileWatchers.ResumeLayout(false);
             this.tabPageLogMessages.ResumeLayout(false);
@@ -551,6 +590,7 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.menuStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,6 +648,10 @@ namespace FileWatcherUtilities.FileWatcherSimple
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelProcessesToRun;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelProcessesToRunCount;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem showToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
     }
 }
 
