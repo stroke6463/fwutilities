@@ -546,20 +546,20 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.showToolStripMenuItem,
             this.exitToolStripMenuItem1});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(104, 48);
             this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.ContextMenuStrip1_Opening);
             // 
             // showToolStripMenuItem
             // 
             this.showToolStripMenuItem.Name = "showToolStripMenuItem";
-            this.showToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.showToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.showToolStripMenuItem.Text = "Show";
             this.showToolStripMenuItem.Click += new System.EventHandler(this.ShowToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(103, 22);
             this.exitToolStripMenuItem1.Text = "Exit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.ExitToolStripMenuItem1_Click);
             // 
@@ -579,6 +579,7 @@ namespace FileWatcherUtilities.FileWatcherSimple
             this.Text = "File Watcher Simple";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormMainFormClosing);
             this.Load += new System.EventHandler(this.FormMainLoad);
+            this.Resize += new System.EventHandler(this.FormMain_Resize);
             this.tabFileWatchers.ResumeLayout(false);
             this.tabPageFileWatchers.ResumeLayout(false);
             this.tabPageLogMessages.ResumeLayout(false);

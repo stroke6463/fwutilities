@@ -60,10 +60,9 @@ namespace FileWatcherUtilities.FileWatcherSimple
             
             // Set double buffering for the form.
             SetDoubleBuffering();
-
+                        
             this.Visible = false;
             this.ShowInTaskbar = false;
-
         }
 
         
@@ -87,22 +86,16 @@ namespace FileWatcherUtilities.FileWatcherSimple
         private void FormMainFormClosing(object sender,
                                          FormClosingEventArgs e)
         {
-            if (!ExitEnabled)
+            if (toolStripButtonStopAll.Enabled)
             {
-                MessageBox.Show(this,
-                                Resources.StopControllerMessage,
-                                Resources.MessageBoxCaptionApplication,
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Stop,
-                                MessageBoxDefaultButton.Button1,
-                                MessageBoxOptions);
-                e.Cancel = true;
+                StopAll(this, EventArgs.Empty);
             }
-            else
+            
+            if (ExitEnabled)
             {
                 if (Exit != null)
                 {
-                    Exit(this, 
+                    Exit(this,
                          EventArgs.Empty);
                 }
             }
@@ -912,10 +905,9 @@ namespace FileWatcherUtilities.FileWatcherSimple
 
         private void NotifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
+            this.ShowInTaskbar = true;
+            this.Visible = true;
             this.WindowState = FormWindowState.Normal;
-            //this.Visible = true;
-            //this.ShowInTaskbar = true;
-
         }
 
         private void MenuStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
@@ -936,6 +928,15 @@ namespace FileWatcherUtilities.FileWatcherSimple
         private void ContextMenuStrip1_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void FormMain_Resize(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized)
+            {
+                this.Visible = false;
+                this.ShowInTaskbar = false;
+            }
         }
     }
 }
