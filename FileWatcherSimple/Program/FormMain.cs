@@ -905,8 +905,9 @@ namespace FileWatcherUtilities.FileWatcherSimple
 
         private void NotifyIcon1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+            this.Show();
             this.ShowInTaskbar = true;
-            this.Visible = true;
             this.WindowState = FormWindowState.Normal;
         }
 
