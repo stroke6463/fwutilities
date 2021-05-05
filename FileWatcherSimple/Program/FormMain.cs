@@ -923,6 +923,9 @@ namespace FileWatcherUtilities.FileWatcherSimple
 
         private void ShowToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.WindowState = FormWindowState.Minimized;
+            this.Show();
+            this.ShowInTaskbar = true;
             this.WindowState = FormWindowState.Normal;
         }
 
